@@ -1,5 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import {Tracker} from 'meteor/tracker';
 
 /* eslint-disable object-shorthand */
 
@@ -30,6 +31,7 @@ export const ContactsSchema = new SimpleSchema({
   telephone: {
     label: 'telephone',
     type: String,
+    regEx: /^\d{3}-\d{3}-\d{4}/,
     optional: false,
     max: 200,
   },
@@ -39,6 +41,7 @@ export const ContactsSchema = new SimpleSchema({
     optional: false,
     max: 200,
   },
+
 });
 
 Contacts.attachSchema(ContactsSchema);

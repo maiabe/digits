@@ -14,3 +14,4 @@ Template.Home_Page.helpers({
 Template.Home_Page.onCreated(function onCreated() {
   this.subscribe('Contacts');
 });
+
